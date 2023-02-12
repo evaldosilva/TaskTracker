@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>Task Tracker</h1>
+  <h1>{{ title }}</h1>
   <app-button
-    label="Add Task"
-    color="red"
+    *ngIf="hasRoute('/')"
+    label="{{ showAddTask ? 'Cancel' : 'Add Task' }}"
+    color="{{ showAddTask ? 'red' : 'green' }}"
     (btnClick)="toogleAddTask()"
   ></app-button>
 </div>
