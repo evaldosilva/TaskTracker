@@ -1,12 +1,19 @@
-<div (dblclick)="onToggle(task)">
-  <h3>
-    {{ task.day }}
-    <fa-icon
-      (click)="onDelete(task)"
-      [ngStyle]="{ color: 'red' }"
-      [icon]="faTimes"
-    ></fa-icon>
-  </h3>
+<div class="card" style="width: 18rem" (dblclick)="onToggle(task)">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-row">
+        {{ task.day }}
+      </div>
+      <div class="d-flex flex-row">
+        <fa-icon
+          (click)="onDelete(task)"
+          [ngStyle]="{ color: 'red' }"
+          [icon]="faTimes"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">Panel Content</div>
   <p [ngClass]="{ reminder: task.reminder }">{{ task.text }}</p>
   <p>{{ task.reminder }}</p>
 </div>
